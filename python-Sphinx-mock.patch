@@ -1,6 +1,7 @@
---- Sphinx-1.7.6/setup.py.orig	2018-07-21 09:11:20.607543626 +0200
-+++ Sphinx-1.7.6/setup.py	2018-07-21 09:14:00.757541787 +0200
-@@ -42,7 +42,6 @@
+diff -urNp -x '*.orig' Sphinx-1.8.5.org/setup.py Sphinx-1.8.5/setup.py
+--- Sphinx-1.8.5.org/setup.py	2019-03-10 08:47:02.000000000 +0100
++++ Sphinx-1.8.5/setup.py	2021-02-27 11:42:43.620291111 +0100
+@@ -43,7 +43,6 @@ extras_require = {
          'whoosh>=2.0',
      ],
      'test': [
@@ -8,9 +9,10 @@
          'pytest',
          'pytest-cov',
          'html5lib',
---- Sphinx-1.7.6/tests/test_build.py.orig	2018-07-21 09:38:14.234191868 +0200
-+++ Sphinx-1.7.6/tests/test_build.py	2018-07-21 09:39:37.260857586 +0200
-@@ -13,7 +13,10 @@
+diff -urNp -x '*.orig' Sphinx-1.8.5.org/tests/test_build.py Sphinx-1.8.5/tests/test_build.py
+--- Sphinx-1.8.5.org/tests/test_build.py	2019-03-10 08:47:02.000000000 +0100
++++ Sphinx-1.8.5/tests/test_build.py	2021-02-27 11:42:43.620291111 +0100
+@@ -13,7 +13,10 @@ import pickle
  import sys
  from textwrap import dedent
  
@@ -22,10 +24,11 @@
  import pytest
  from docutils import nodes
  
---- Sphinx-1.7.6/tests/test_config.py.orig	2018-07-21 09:38:14.237525201 +0200
-+++ Sphinx-1.7.6/tests/test_config.py	2018-07-21 09:39:59.077523735 +0200
+diff -urNp -x '*.orig' Sphinx-1.8.5.org/tests/test_config.py Sphinx-1.8.5/tests/test_config.py
+--- Sphinx-1.8.5.org/tests/test_config.py	2019-03-10 08:47:02.000000000 +0100
++++ Sphinx-1.8.5/tests/test_config.py	2021-02-27 11:42:43.620291111 +0100
 @@ -9,7 +9,10 @@
-     :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
+     :copyright: Copyright 2007-2019 by the Sphinx team, see AUTHORS.
      :license: BSD, see LICENSE for details.
  """
 -import mock
@@ -34,10 +37,11 @@
 +except ImportError:
 +    from unittest import mock
  import pytest
- from six import PY3, iteritems
+ from six import PY3
  
---- Sphinx-1.7.6/tests/test_domain_std.py.orig	2018-07-21 09:38:14.237525201 +0200
-+++ Sphinx-1.7.6/tests/test_domain_std.py	2018-07-21 09:40:23.530857064 +0200
+diff -urNp -x '*.orig' Sphinx-1.8.5.org/tests/test_domain_std.py Sphinx-1.8.5/tests/test_domain_std.py
+--- Sphinx-1.8.5.org/tests/test_domain_std.py	2019-03-10 08:47:02.000000000 +0100
++++ Sphinx-1.8.5/tests/test_domain_std.py	2021-02-27 11:42:43.620291111 +0100
 @@ -9,7 +9,10 @@
      :license: BSD, see LICENSE for details.
  """
@@ -50,11 +54,12 @@
  from docutils import nodes
  
  from sphinx.domains.std import StandardDomain
---- Sphinx-1.5.5/tests/test_environment_indexentries.py.orig	2017-04-03 17:17:12.000000000 +0200
-+++ Sphinx-1.5.5/tests/test_environment_indexentries.py	2017-04-16 19:16:37.202256421 +0200
-@@ -13,7 +13,10 @@ from collections import namedtuple
- from sphinx import locale
- from sphinx.environment.managers.indexentries import IndexEntries
+diff -urNp -x '*.orig' Sphinx-1.8.5.org/tests/test_environment_indexentries.py Sphinx-1.8.5/tests/test_environment_indexentries.py
+--- Sphinx-1.8.5.org/tests/test_environment_indexentries.py	2019-03-10 08:47:02.000000000 +0100
++++ Sphinx-1.8.5/tests/test_environment_indexentries.py	2021-02-27 11:42:43.620291111 +0100
+@@ -11,7 +11,10 @@
+ 
+ from collections import namedtuple
  
 -import mock
 +try:
@@ -62,11 +67,12 @@
 +except ImportError:
 +    from unittest import mock
  
- Environment = namedtuple('Environment', 'indexentries')
- 
---- Sphinx-1.7.6/tests/test_ext_intersphinx.py.orig	2018-07-21 09:38:14.237525201 +0200
-+++ Sphinx-1.7.6/tests/test_ext_intersphinx.py	2018-07-21 09:40:47.824190102 +0200
-@@ -13,7 +13,10 @@
+ from sphinx import locale
+ from sphinx.environment.adapters.indexentries import IndexEntries
+diff -urNp -x '*.orig' Sphinx-1.8.5.org/tests/test_ext_intersphinx.py Sphinx-1.8.5/tests/test_ext_intersphinx.py
+--- Sphinx-1.8.5.org/tests/test_ext_intersphinx.py	2019-03-10 08:47:02.000000000 +0100
++++ Sphinx-1.8.5/tests/test_ext_intersphinx.py	2021-02-27 11:42:43.620291111 +0100
+@@ -13,7 +13,10 @@ import os
  import unittest
  from io import BytesIO
  
@@ -78,22 +84,9 @@
  import pytest
  import requests
  from docutils import nodes
---- Sphinx-1.7.6/tests/test_ext_napoleon_docstring.py.orig	2018-07-21 09:38:14.240858534 +0200
-+++ Sphinx-1.7.6/tests/test_ext_napoleon_docstring.py	2018-07-21 09:41:38.977522865 +0200
-@@ -15,7 +15,10 @@
- from textwrap import dedent
- from unittest import TestCase
- 
--import mock
-+try:
-+    import mock
-+except ImportError:
-+    from unittest import mock
- 
- from sphinx.ext.napoleon import Config
- from sphinx.ext.napoleon.docstring import GoogleDocstring, NumpyDocstring
---- Sphinx-1.7.6/tests/test_ext_napoleon.py.orig	2018-07-21 09:38:14.240858534 +0200
-+++ Sphinx-1.7.6/tests/test_ext_napoleon.py	2018-07-21 09:41:24.010856357 +0200
+diff -urNp -x '*.orig' Sphinx-1.8.5.org/tests/test_ext_napoleon.py Sphinx-1.8.5/tests/test_ext_napoleon.py
+--- Sphinx-1.8.5.org/tests/test_ext_napoleon.py	2019-03-10 08:47:02.000000000 +0100
++++ Sphinx-1.8.5/tests/test_ext_napoleon.py	2021-02-27 11:42:43.620291111 +0100
 @@ -13,7 +13,10 @@
  from collections import namedtuple
  from unittest import TestCase
@@ -106,11 +99,12 @@
  
  from sphinx.application import Sphinx
  from sphinx.ext.napoleon import _process_docstring, _skip_member, Config, setup
---- Sphinx-1.5.5/tests/test_util_fileutil.py.orig	2017-03-27 03:42:15.000000000 +0200
-+++ Sphinx-1.5.5/tests/test_util_fileutil.py	2017-04-16 19:17:19.555589270 +0200
-@@ -11,7 +11,10 @@
- from sphinx.util.fileutil import copy_asset, copy_asset_file
- from sphinx.jinja2glue import BuiltinTemplateLoader
+diff -urNp -x '*.orig' Sphinx-1.8.5.org/tests/test_ext_napoleon_docstring.py Sphinx-1.8.5/tests/test_ext_napoleon_docstring.py
+--- Sphinx-1.8.5.org/tests/test_ext_napoleon_docstring.py	2019-03-10 08:47:02.000000000 +0100
++++ Sphinx-1.8.5/tests/test_ext_napoleon_docstring.py	2021-02-27 11:42:43.620291111 +0100
+@@ -15,7 +15,10 @@ from inspect import cleandoc
+ from textwrap import dedent
+ from unittest import TestCase
  
 -import mock
 +try:
@@ -118,5 +112,20 @@
 +except ImportError:
 +    from unittest import mock
  
+ from sphinx.ext.napoleon import Config
+ from sphinx.ext.napoleon.docstring import GoogleDocstring, NumpyDocstring
+diff -urNp -x '*.orig' Sphinx-1.8.5.org/tests/test_util_fileutil.py Sphinx-1.8.5/tests/test_util_fileutil.py
+--- Sphinx-1.8.5.org/tests/test_util_fileutil.py	2019-03-10 08:47:02.000000000 +0100
++++ Sphinx-1.8.5/tests/test_util_fileutil.py	2021-02-27 11:42:43.620291111 +0100
+@@ -9,7 +9,10 @@
+     :license: BSD, see LICENSE for details.
+ """
  
- class DummyTemplateLoader(BuiltinTemplateLoader):
+-import mock
++try:
++    import mock
++except ImportError:
++    from unittest import mock
+ 
+ from sphinx.jinja2glue import BuiltinTemplateLoader
+ from sphinx.util.fileutil import copy_asset, copy_asset_file
