@@ -11,7 +11,7 @@ Summary(pl.UTF-8):	Sphinx - narzędzie do tworzenia dokumentacji dla Pythona (mo
 Name:		python-Sphinx
 # note: keep 1.x here, Sphinx 2+ doesn't support Python 2
 Version:	1.8.5
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages/Python
 #Source0Download: https://pypi.org/simple/Sphinx/
