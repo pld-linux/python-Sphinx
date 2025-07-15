@@ -207,8 +207,8 @@ Dokumentacja do generatora dokumentacji pythonowej Sphinx.
 
 %prep
 %setup -q -n Sphinx-%{version}
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 # needs python-babel with at least de,en,ja locales installed
 %{__rm} tests/test_util_i18n.py
